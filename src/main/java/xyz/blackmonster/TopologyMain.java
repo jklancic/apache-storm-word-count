@@ -18,8 +18,7 @@ public class TopologyMain {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		ClassLoader classLoader = TopologyMain.class.getClassLoader();
-		String path = (new File(classLoader.getResource("file/test.xml").getFile())).getAbsolutePath();
+		String path = new File("src/main/resources/words.txt").getAbsolutePath();
 
 		TopologyBuilder builder = new TopologyBuilder();
 		builder.setSpout("word-reader", new WordReader());

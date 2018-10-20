@@ -1,5 +1,6 @@
 package xyz.blackmonster.bolts;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.storm.task.TopologyContext;
@@ -26,6 +27,7 @@ public class WordCounter extends BaseBasicBolt {
 	public void prepare(Map stormConf, TopologyContext context) {
 		this.name = context.getThisComponentId();
 		this.id = context.getThisTaskId();
+		counters = new HashMap<>();
 	}
 
 	@Override
